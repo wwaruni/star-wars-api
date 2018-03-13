@@ -12,7 +12,8 @@ Project setup
 3. Give nessary foler permissions for var folder inside the directory. 
     sudo chown -R ${USER}:www-data var
     sudo chmod -R 7555 var/
-4. Create a virtual host for your project folder
+4. Clear the cache by running php bin/console cache:clear -e prod
+5. Create a virtual host for your project folder
     This is an example 
 
     
@@ -39,7 +40,7 @@ Project setup
         #Include conf-available/serve-cgi-bin.conf
     </VirtualHost>
 
-5. Add an entry in the /etc/hosts file to use above server name
+6. Add an entry in the /etc/hosts file to use above server name
     
     127.0.0.1 local.starwars.api
 
