@@ -17,19 +17,22 @@ class PeopleManagerTest extends KernelTestCase {
 
     public function testGetAllPeopleTotalCount()
     {
-        $people = $this->manager->getAllPeople();
+        $params = array('page' => 1);
+        $people = $this->manager->getAllPeople($params);
         $this->assertEquals(87, $people['count']);
     }
 
     public function testGetAllPeopleResults()
     {
-        $people = $this->manager->getAllPeople();
+        $params = array('page' => 1);
+        $people = $this->manager->getAllPeople($params);
         $this->assertEquals(true, array_key_exists('results', $people));
     }
 
     public function testGetPeopleResultsArrayAttributes()
     {
-        $people  = $this->manager->getAllPeople();
+        $params = array('page' => 1);
+        $people  = $this->manager->getAllPeople($params);
         $results = $people['results'];
         $this->assertEquals(true, array_key_exists('name', $results[0]));
         $this->assertEquals(true, array_key_exists('height', $results[0]));
