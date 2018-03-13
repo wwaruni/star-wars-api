@@ -1,0 +1,21 @@
+star_war:
+    resource: "@StarWarBundle/Controller/"
+    type:     annotation
+    prefix:   /V1/
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /api/doc
+        permanent: true
+    path: /api
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /api/doc
+        permanent: true

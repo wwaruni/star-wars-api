@@ -1,0 +1,17 @@
+parameters:
+    star_war_service.people_manager.class: CodePractise\Service\V1\StarWarBundle\Manager\PeopleManager
+    star_war_service.hal_manager.class: CodePractise\Service\V1\StarWarBundle\Manager\HalManager
+
+services:
+    star_war_service.people_manager:
+        class: %star_war_service.people_manager.class%
+        arguments: ["@kernel"]
+
+    star_war_service.hal_manager:
+            class: %star_war_service.hal_manager.class%
+            arguments:
+                router: "@router"
+                request: "@request_stack"
+#    star_war.example:
+#        class: StarWarBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

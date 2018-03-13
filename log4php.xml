@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://logging.apache.org/log4php/">
+    <appender name="debuglog" class="LoggerAppenderFile">
+        <param name="file" value="../var/logs/debug.log" />
+        <filter class="LoggerFilterLevelMatch">
+            <param name="LevelToMatch" value="debug" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+        <filter class="LoggerFilterDenyAll" />
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} %msg%n" />
+        </layout>
+    </appender>
+
+    <appender name="infolog" class="LoggerAppenderFile">
+        <param name="file" value="../var/logs/info.log" />
+        <filter class="LoggerFilterLevelMatch">
+            <param name="LevelToMatch" value="info" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+        <filter class="LoggerFilterDenyAll" />
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} %msg%n" />
+        </layout>
+    </appender>
+
+    <appender name="warnlog" class="LoggerAppenderFile">
+        <param name="file" value="../var/logs/warn.log" />
+        <filter class="LoggerFilterLevelMatch">
+            <param name="LevelToMatch" value="warn" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+        <filter class="LoggerFilterDenyAll" />
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} %msg%n" />
+        </layout>
+    </appender>
+
+    <appender name="errorlog" class="LoggerAppenderFile">
+        <param name="file" value="../var/logs/error.log" />
+        <filter class="LoggerFilterLevelMatch">
+            <param name="LevelToMatch" value="error" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+        <filter class="LoggerFilterDenyAll" />
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} %msg%n" />
+        </layout>
+    </appender>
+
+    <appender name="fatallog" class="LoggerAppenderFile">
+        <param name="file" value="../var/logs/fatal.log" />
+        <filter class="LoggerFilterLevelMatch">
+            <param name="LevelToMatch" value="fatal" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+        <filter class="LoggerFilterDenyAll" />
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} %msg%n" />
+        </layout>
+    </appender>
+
+    <root>
+        <appender_ref ref="debuglog" />
+        <appender_ref ref="infolog" />
+        <appender_ref ref="warnlog" />
+        <appender_ref ref="errorlog" />
+        <appender_ref ref="fatallog" />
+    </root>
+</configuration>
